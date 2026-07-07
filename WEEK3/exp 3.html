@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .container {
+            width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 6px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .buttons {
+            text-align: center;
+        }
+
+        .buttons input {
+            width: 100px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Job Registration Form</h2>
+
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <table>
+
+            <tr>
+                <td><label>Full Name:</label></td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Gender:</label></td>
+                <td>
+                    <input type="radio" name="gender" value="Male"> Male
+                    <input type="radio" name="gender" value="Female"> Female
+                    <input type="radio" name="gender" value="Other"> Other
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Languages Known:</label></td>
+                <td>
+                    <input type="checkbox" name="lang" value="English"> English
+                    <input type="checkbox" name="lang" value="Hindi"> Hindi
+                    <input type="checkbox" name="lang" value="Telugu"> Telugu
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Email:</label></td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Contact Number:</label></td>
+                <td><input type="tel" name="contact" pattern="[0-9]{10}" required></td>
+            </tr>
+
+            <tr>
+                <td><label>Address:</label></td>
+                <td><textarea name="address" rows="3"></textarea></td>
+            </tr>
+
+            <tr>
+                <td><label>Preferred Job Location:</label></td>
+                <td>
+                    <select name="location">
+                        <option value="">--Select Location--</option>
+                        <option>Hyderabad</option>
+                        <option>Bengaluru</option>
+                        <option>Chennai</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>About Yourself:</label></td>
+                <td>
+                    <textarea name="about" rows="5" placeholder="Describe yourself..."></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label>Upload CV:</label></td>
+                <td><input type="file" name="cv"></td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="buttons">
+                    <input type="reset" value="Clear">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Registration Form</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background-color:#f2f2f2;
+        }
+
+        .container{
+            width:400px;
+            margin:auto;
+            margin-top:50px;
+            background-color:white;
+            padding:20px;
+            border-radius:10px;
+        }
+
+        h1{
+            text-align:center;
+            color:darkblue;
+        }
+
+        input{
+            width:100%;
+            padding:10px;
+            margin-top:10px;
+            margin-bottom:15px;
+        }
+
+        button{
+            width:100%;
+            padding:10px;
+            background-color:green;
+            color:white;
+            border:none;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        .error{
+            color:red;
+            font-size:14px;
+        }
+
+        .success{
+            color:green;
+            text-align:center;
+            font-size:18px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Job Registration Form</h1>
+
+        <form onsubmit="return validateForm()">
+
+            <label>Name</label>
+            <input type="text" id="name">
+
+            <div id="nameError" class="error"></div>
+
+            <label>Email</label>
+            <input type="text" id="email">
+
+            <div id="emailError" class="error"></div>
+
+            <label>Contact Number</label>
+            <input type="text" id="contact">
+
+            <div id="contactError" class="error"></div>
+
+            <button type="submit">Register</button>
+
+        </form>
+
+        <div id="successMsg" class="success"></div>
+
+    </div>
+
+    <script>
+
+        function validateForm(){
+
+            // Get Values
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let contact = document.getElementById("contact").value;
+
+            // Regular Expressions
+            let namePattern = /^[A-Za-z ]+$/;
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            let contactPattern = /^[0-9]{10}$/;
+
+            // Clear Previous Errors
+            document.getElementById("nameError").innerHTML = "";
+            document.getElementById("emailError").innerHTML = "";
+            document.getElementById("contactError").innerHTML = "";
+            document.getElementById("successMsg").innerHTML = "";
+
+            let valid = true;
+
+            // Name Validation
+            if(!namePattern.test(name)){
+
+                document.getElementById("nameError").innerHTML =
+                "Enter valid name";
+
+                valid = false;
+            }
+
+            // Email Validation
+            if(!emailPattern.test(email)){
+
+                document.getElementById("emailError").innerHTML =
+                "Enter valid email";
+
+                valid = false;
+            }
+
+            // Contact Validation
+            if(!contactPattern.test(contact)){
+
+                document.getElementById("contactError").innerHTML =
+                "Enter valid 10-digit contact number";
+
+                valid = false;
+            }
+
+            // Success Message
+            if(valid){
+
+                document.getElementById("successMsg").innerHTML =
+                "Registered Successfully";
+
+                return false;
+            }
+
+            return false;
+        }
+
+    </script>
+
+</body>
+</html>

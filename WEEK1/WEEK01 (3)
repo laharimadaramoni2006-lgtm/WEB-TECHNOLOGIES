@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Mobile Store</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 20px;
+        }
+
+        h1{
+            text-align: center;
+            color: darkblue;
+        }
+
+        table{
+            width: 80%;
+            margin: auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td{
+            border: 1px solid black;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th{
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        tr:hover{
+            background-color: #f5f5f5;
+        }
+
+        .product-section{
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+        }
+
+        img{
+            display: block;
+            margin: auto;
+        }
+
+        video{
+            display: block;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Online Mobile Store</h1>
+
+    <!-- Product Table -->
+
+    <table>
+        <tr>
+            <th>Product Name</th>
+            <th>Brand</th>
+            <th>Price</th>
+        </tr>
+
+        <tr>
+            <td><a href="iphone.html">iPhone 15</a></td>
+            <td>Apple</td>
+            <td>$999</td>
+        </tr>
+
+        <tr>
+            <td><a href="samsung.html">Samsung Galaxy S24</a></td>
+            <td>Samsung</td>
+            <td>$899</td>
+        </tr>
+
+        <tr>
+            <td><a href="oneplus.html">OnePlus 12</a></td>
+            <td>OnePlus</td>
+            <td>$799</td>
+        </tr>
+    </table>
+
+    <!-- iPhone Section -->
+
+    <div class="product-section" id="iphone">
+
+        <h2>Apple iPhone 15</h2>
+
+        <img src="C:\Users\lahar\OneDrive\Desktop\12f9\WEEK01\images\iphone15.jpg"
+             width="300"
+             height="350"
+             alt="iPhone 15">
+
+        <h3>Features</h3>
+
+        <ul>
+            <li>6.1-inch Super Retina XDR Display</li>
+            <li>A16 Bionic Chip</li>
+            <li>48MP Main Camera</li>
+            <li>USB-C Connectivity</li>
+            <li>Face ID Security</li>
+        </ul>
+
+        <h3>Product Demo Video</h3>
+
+        <video width="500" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </div>
+
+    <!-- Samsung Section -->
+
+    <div class="product-section" id="samsung">
+
+        <h2>Samsung Galaxy S24</h2>
+
+        <img src="C:\Users\lahar\OneDrive\Desktop\12f9\WEEK01\images\samsung_galaxy_s24.jpg"
+             width="300"
+             height="350"
+             alt="Samsung Galaxy S24">
+
+        <h3>Features</h3>
+
+        <ul>
+            <li>6.2-inch AMOLED Display</li>
+            <li>50MP Triple Camera</li>
+            <li>Snapdragon Processor</li>
+            <li>5000mAh Battery</li>
+            <li>5G Connectivity</li>
+        </ul>
+
+        <h3>Product Demo Video</h3>
+
+        <video width="500" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </div>
+
+    <!-- OnePlus Section -->
+
+    <div class="product-section" id="oneplus">
+
+        <h2>OnePlus 12</h2>
+
+        <img src="C:\Users\lahar\OneDrive\Desktop\12f9\WEEK01\images\oneplus_12.jpg"
+             width="300"
+             height="350"
+             alt="OnePlus 12">
+
+        <h3>Features</h3>
+
+        <ul>
+            <li>6.82-inch AMOLED Display</li>
+            <li>100W Fast Charging</li>
+            <li>50MP Triple Camera</li>
+            <li>Snapdragon 8 Gen Processor</li>
+            <li>5400mAh Battery</li>
+        </ul>
+
+        <h3>Product Demo Video</h3>
+
+        <video width="500" controls>
+            <source src="sample.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+
+    </div>
+
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Organization Website</title>
+
+    <style>
+
+        body{
+            margin:0;
+            font-family:Arial;
+        }
+
+        /* Frame 1 */
+        .title{
+            background-color:darkblue;
+            color:white;
+            text-align:center;
+            padding:20px;
+        }
+
+        /* Main Layout */
+        .container{
+            display:flex;
+            height:100vh;
+        }
+
+        /* Frame 2 */
+        .menu{
+            width:25%;
+            background-color:#f2f2f2;
+            padding:20px;
+        }
+
+        .menu a{
+            display:block;
+            background-color:green;
+            color:white;
+            padding:12px;
+            margin-bottom:10px;
+            text-decoration:none;
+            text-align:center;
+            font-size:18px;
+        }
+
+        .menu a:hover{
+            background-color:darkgreen;
+        }
+
+        /* Frame 3 */
+        .content{
+            width:75%;
+            padding:20px;
+            background-color:white;
+        }
+
+        h1{
+            color:darkblue;
+        }
+
+    </style>
+
+    <script>
+
+        function showPage(page){
+
+            let content = document.getElementById("content");
+
+            if(page=="home"){
+
+                content.innerHTML =
+
+                "<h1>Home Page</h1>" +
+
+                "<p>Welcome to ABC Technologies Organization website.</p>";
+            }
+
+            else if(page=="about"){
+
+                content.innerHTML =
+
+                "<h1>About Us</h1>" +
+
+                "<p>ABC Technologies provides software and web development services.</p>";
+            }
+
+            else if(page=="services"){
+
+                content.innerHTML =
+
+                "<h1>Services</h1>" +
+
+                "<ul>" +
+                "<li>Web Development</li>" +
+                "<li>Cloud Computing</li>" +
+                "<li>Mobile Applications</li>" +
+                "</ul>";
+            }
+
+            else if(page=="contact"){
+
+                content.innerHTML =
+
+                "<h1>Contact Us</h1>" +
+
+                "<p>Email : abc@gmail.com</p>" +
+
+                "<p>Phone : +91 9876543210</p>";
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <!-- Frame 1 -->
+    <div class="title">
+
+        <!-- Inline CSS -->
+        <h1 style="margin:0;">
+            ABC Technologies Organization
+        </h1>
+
+    </div>
+
+    <div class="container">
+
+        <!-- Frame 2 -->
+        <div class="menu">
+
+            <a href="#" onclick="showPage('home')">Home</a>
+
+            <a href="#" onclick="showPage('about')">About Us</a>
+
+            <a href="#" onclick="showPage('services')">Services</a>
+
+            <a href="#" onclick="showPage('contact')">Contact</a>
+
+        </div>
+
+        <!-- Frame 3 -->
+        <div class="content" id="content">
+
+            <h1>Home Page</h1>
+
+            <p>
+                Welcome to ABC Technologies Organization website.
+            </p>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<html>
+<head>
+    <style>
+        input[type=text]{
+            width:100%;
+            background_color:rgb(103,222,222)_;
+            color:white;
+            border:2px solid;
+            padding:10px;
+        }
+        input[type=number]{
+            width:100%;
+            background_color:rgb(123,92,167);
+            color:white;
+            border:2px solid;
+            padding:15px;
+        }
+        input[type=button]{
+            height:30px;
+            background_color:rgb(44,233,48);
+            color:white;
+            border:2px solid;
+            margin_top:50px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        Name<input type="text" placeholder="enter your name">
+        Occupation<input type="text" placeholder="enter your occupation">
+        Amount<input type="text" placeholder="enter loan amount"id="amount">
+        Rate of interest<input type="number" placeholder="enter ROI"id="roi">
+        Tenure<input type="number" placeholder="enter number of years"id="tenure">
+        <input type="button"value="calculate emi"onclick="calculate()">  
+
+    </form>
+    <p id="result"></p>
+<script>
+function calculate()
+{
+    var A =document.getElementById("amount").value;
+    var interest = document.getElementById("roi").value;
+    var years = document.getElementById("tenure").value;
+
+    var months = years * 12;
+    var R = interest / (12 * 100);
+
+    var emi = (A * R * Math.pow(1 + R, months)) /
+              (Math.pow(1 + R, months) - 1);
+
+    document.getElementById("result").innerHTML =
+        "<h2>Your EMI is: " + emi.toFixed(2) + "</h2>";
+}
+</script>
+
+<p style="text-align:right;">M. Lahari</p>
+<p style="text-align:right;">24881A12F9</p>
+
+</body>
+</html>
+           
